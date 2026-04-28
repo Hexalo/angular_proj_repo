@@ -1,5 +1,19 @@
-<nav class="navbar navbar-light navbar-expand bg-light ps-5">
-  <a class="navbar-brand">{{ title | titlecase }}</a>
-  <a class="nav-item nav-link" routerLink="/">Accueil</a>
-  <a class="nav-item nav-link ms-3" routerLink="/movies">Gestion de films</a>
+<nav class="navbar navbar-light navbar-expand ps-5">
+    <img
+        src="logo.png"
+        class="navbar-logo "
+    >
+  <a class="navbar-brand">{{ title }}</a>
+  <a class="nav-item nav-link" routerLink="/">
+      <div class="nav-item-content">
+          <i class="bi bi-house"></i>
+          Accueil
+      </div>
+  </a>
+  <a class="nav-item nav-link ms-3" routerLink="/movies">
+      <div class="nav-item-content">
+          <i class="bi bi-film"></i>
+          Gestion de films
+      </div>
+  </a>
 </nav>
