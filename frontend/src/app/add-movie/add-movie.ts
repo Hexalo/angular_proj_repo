@@ -3,6 +3,8 @@ import { Movie } from '../models/movie';
 import { FormsModule } from '@angular/forms';
 import { MoviesApi } from '../services/movies-api';
 import { Router } from '@angular/router';
+import { ToastService } from '../services/toast.service';
+import { confetti } from "@tsparticles/confetti";
 
 @Component({
   selector: 'app-add-movie',
@@ -14,10 +16,19 @@ export class AddMovie {
 
   private readonly router = inject(Router);
   private readonly moviesApi = inject(MoviesApi);
+  private readonly toastService = inject(ToastService);
 
   addMovie(): void {
     this.moviesApi.addMovie(this.movie).subscribe(
-        () => this.router.navigate(['/movies'])
+        () => {
+          this.toastService.show('Nouveau film ajouté !');
+          this.router.navigate(['/movies']);
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
     );
   }
 
