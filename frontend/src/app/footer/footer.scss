@@ -1,0 +1,106 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+$footer-bg: #1a1a1a;
+$text-color: #ffffff;
+$accent-color: #dbba34;
+$hover-color: #2980b9;
+$border-color: #333;
+
+.footer {
+  background: linear-gradient(to top, #292929, #1c1c1c);
+  color: $text-color;
+  padding: 3rem 1rem 1.5rem;
+  font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+
+
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .social-section {
+    display: flex;
+    gap: 1.5rem;
+
+    .social-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      background-color: lighten($footer-bg, 10%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10%;
+      font-weight: bold;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+
+      &:hover {
+        background-color: $accent-color;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .links-section {
+    width: 100%;
+
+    .footer-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+
+      th {
+        padding-bottom: 1rem;
+        color: $accent-color;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      td {
+        padding: 0.5rem 0;
+
+        a {
+          color: darken($text-color, 20%);
+          text-decoration: none;
+          transition: color 0.2s;
+
+          &:hover {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Copyright
+  .copyright-section {
+    width: 100%;
+    border-top: 1px solid $border-color;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: darken($text-color, 40%);
+  }
+}
+
+// Adaptabilité mobile
+@media (max-width: 600px) {
+  .footer-table {
+    th, td {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    th {
+      margin-top: 1rem;
+    }
+  }
+}
