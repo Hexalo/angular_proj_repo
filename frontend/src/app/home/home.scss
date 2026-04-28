@@ -17,6 +17,12 @@
   gap: 1rem;
 }
 
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .nav-btn {
   background-color: #333;
   color: white;
