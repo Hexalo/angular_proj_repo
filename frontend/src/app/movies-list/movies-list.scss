@@ -1,0 +1,35 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.btn{
+  margin: 5px;
+}
+
+.table-container {
+
+  table {
+    width: 95%;
+    width: 95%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+
+  th, td {
+    padding: 8px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+  }
+
+  td {
+    border-right: 1px solid rgb(52, 69, 88);
+  }
+
+  th {
+    white-space: nowrap;
+    background-color: rgb(52, 69, 88);
+    border-right: 1px solid rgb(112, 150, 194);
+    color: white;
+  }
+}
