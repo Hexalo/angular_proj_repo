@@ -4,10 +4,11 @@ import { MoviesApi } from '../services/movies-api';
 import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { MovieCard } from "./movie-card/movie-card";
+import {MovieCardTrendy} from "./movie-card-trendy/movie-card-trendy";
 
 @Component({
   selector: 'app-home',
-  imports: [AsyncPipe, MovieCard],
+  imports: [AsyncPipe, MovieCard, MovieCardTrendy],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
