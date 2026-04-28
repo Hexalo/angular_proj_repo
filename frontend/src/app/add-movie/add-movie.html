@@ -6,26 +6,26 @@
 
   <div class="d-flex flex-column ">
     <label for="title"><i class="bi bi-film"></i> Titre</label>
-    <input type="text" id="title" name="title" [(ngModel)]="movie.title"/>
+    <input type="text" [formControl]="title" id="title" />
   </div>
 
   <div class="d-flex flex-column " style="margin-top: 20px;">
     <label for="director"><i class="bi bi-person"></i> Realisateur</label>
-    <input type="text" id="director" name="director" [(ngModel)]="movie.director"/>
+    <input type="text" [formControl]="director" id="director" />
   </div>
 
   <div class="d-flex flex-column " style="margin-top: 20px;">
     <label for="releaseDate"><i class="bi bi-calendar-date"></i> Date de parution</label>
-    <input type="date" id="releaseDate" name="releaseDate" [(ngModel)]="movie.releaseDate"/>
+    <input type="date" [formControl]="releaseDate" id="releaseDate" />
   </div>
 
   <div class="d-flex flex-column " style="margin-top: 20px;">
     <label for="synopsis"><i class="bi bi-card-text"></i> Synopsis</label>
-    <textarea id="synopsis" name="synopsis" [(ngModel)]="movie.synopsis" rows="3"></textarea>
+    <textarea id="synopsis" name="synopsis" [formControl]="synopsis" rows="3"></textarea>
   </div>
 
-  <button style="marginTop: 30px;" class="btn btn-warning" (click)=addMovie()>
+  <button style="marginTop: 30px;" class="btn btn-warning" (click)=addMovie()
+    [disabled]="title.invalid || director.invalid || synopsis.invalid || releaseDate.invalid">
     <i class="bi bi-check-circle me-2"></i> Ajouter
   </button>
 </div>
-
