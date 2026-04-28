@@ -34,15 +34,15 @@
         <td>{{ movie.synopsis }}</td>
 
         <td>
-          <button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id)"><i class="bi bi-trash"></i></button>
-          <button [routerLink]="['/update-movie', movie.id]" type="button" class="btn btn-primary editButton">
+          <button type="button" class="btn btn-warning deleteButton" (click)="deleteMovie(movie.id)"><i class="bi bi-trash"></i></button>
+          <button [routerLink]="['/update-movie', movie.id]" type="button" class="btn btn-primary btn-warning">
             <i class="bi bi-pencil"></i>
           </button>
       </tr>
     }
     </tbody>
   </table>
-  <button type="button" style="marginLeft: 30px; margin-bottom: 30px;" class="btn btn-primary " routerLink="/add-movie">
+  <button type="button" style="marginLeft: 30px; margin-bottom: 30px;" class="btn btn-primary btn-warning" routerLink="/add-movie">
     <i class="bi bi-plus-circle"></i> Nouveau Film
   </button>
 </div>
