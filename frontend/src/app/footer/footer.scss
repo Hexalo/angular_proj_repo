@@ -78,7 +78,6 @@ $border-color: #333;
     }
   }
 
-  // Copyright
   .copyright-section {
     width: 100%;
     border-top: 1px solid $border-color;
@@ -89,7 +88,6 @@ $border-color: #333;
   }
 }
 
-// Adaptabilité mobile
 @media (max-width: 600px) {
   .footer-table {
     th, td {
