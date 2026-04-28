@@ -4,13 +4,14 @@ import { Navbar } from "./navbar/navbar";
 import { Home } from "./home/home";
 import { ToastContainer } from './toast-container/toast-container';
 import { DarkSoulsOverlay } from './dark-souls-overlay/dark-souls-overlay';
+import { Footer } from "./footer/footer";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Home, ToastContainer, DarkSoulsOverlay],
+  imports: [RouterOutlet, Navbar, Home, ToastContainer, DarkSoulsOverlay, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('frontend');
+  protected readonly title = signal('TAKICINE');
 }
