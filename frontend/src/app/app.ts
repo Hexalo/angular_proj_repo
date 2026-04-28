@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Navbar } from "./navbar/navbar";
 import { Home } from "./home/home";
 import { ToastContainer } from './toast-container/toast-container';
+import { DarkSoulsOverlay } from './dark-souls-overlay/dark-souls-overlay';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Home, ToastContainer],
+  imports: [RouterOutlet, Navbar, Home, ToastContainer, DarkSoulsOverlay],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
