@@ -22,7 +22,7 @@ export class NoteMovie {
   open() {
     this.isModalOpen = true;
     this.moviesApi.getMovieReviews(this.movie.id!).subscribe(reviews => {
-      const myReview = reviews.find(r => r.user.id === 99);
+      const myReview = reviews.find(r => r.user.id === 3);
       if (myReview) {
         this.selectedNote = myReview.rate;
         this.reviewText = myReview.text || '';

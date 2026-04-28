@@ -41,7 +41,7 @@ export class MoviesApi {
   addReview(movieId: number, rate: number, text: string): Observable<any> {
     const review = {
       movie: { id: movieId },
-      user: { id: 99 },
+      user: { id: 3 },
       rate: rate,
       text: text,
       reviewDate: new Date()
@@ -53,7 +53,7 @@ export class MoviesApi {
     const review = {
       id: reviewId,
       movie: { id: movieId },
-      user: { id: 99 },
+      user: { id: 3 },
       rate: rate,
       text: text,
       reviewDate: new Date()
