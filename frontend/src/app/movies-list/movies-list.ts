@@ -5,6 +5,7 @@ import { Component, DestroyRef, inject } from '@angular/core';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { Route, RouterLink } from "@angular/router";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -14,6 +15,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class MoviesList {
   private readonly moviesApi = inject(MoviesApi);
+  private readonly toastService = inject(ToastService);
 
   movies: Movie[] = [];
   ngOnInit(): void {
@@ -26,9 +28,10 @@ export class MoviesList {
   deleteMovie(id: number | undefined): void {
     if (id === undefined) return;
 
-    this.moviesApi.deleteMovie(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() =>
-        this.movies = this.movies.filter(film => film.id !== id)
-    );
+    this.moviesApi.deleteMovie(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
+      this.toastService.show('Film supprimé !');
+      this.movies = this.movies.filter(film => film.id !== id)
+    });
   }
 
 }

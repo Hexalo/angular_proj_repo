@@ -4,6 +4,7 @@ import { Component, inject, Inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-update-movie',
@@ -17,6 +18,7 @@ export class UpdateMovie implements OnInit {
   private readonly router = inject(Router);
   private readonly moviesApi = inject(MoviesApi);
   private readonly route = inject(ActivatedRoute);
+  private readonly toastService = inject(ToastService);
 
 
   movie: Movie = {
@@ -41,8 +43,11 @@ export class UpdateMovie implements OnInit {
     if (this.id === undefined) return;
 
     this.moviesApi.updateMovie(this.movie).subscribe(
-        () => console.log('Movie updated successfully')
-    );
+        () => {
+          this.toastService.show('Film mis à jour !')
+          console.log('Movie updated successfully')
+        }
+  );
 
     this.router.navigate(['/movies']);
   }

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { MoviesApi } from '../services/movies-api';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { ToastService } from '../services/toast.service';
+import { confetti } from "@tsparticles/confetti";
 
 @Component({
   selector: 'app-add-movie',
@@ -15,6 +17,7 @@ export class AddMovie {
 
   private readonly router = inject(Router);
   private readonly moviesApi = inject(MoviesApi);
+  private readonly toastService = inject(ToastService);
 
   title = new FormControl('', [Validators.required, Validators.pattern(/^[A-Z0-9\s]*$/)]);
   director = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z-]+\s[a-zA-Z-]+$/)]);
@@ -33,7 +36,15 @@ export class AddMovie {
     }
 
     this.moviesApi.addMovie(movie).subscribe(
-      () => this.router.navigate(['/movies'])
+        () => {
+          this.toastService.show('Nouveau film ajouté !');
+          this.router.navigate(['/movies']);
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
     );
   }
 

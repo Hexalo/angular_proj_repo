@@ -1,0 +1,46 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.navbar
+{
+  background: linear-gradient(to top, #ffffff, #ffe4ba);
+}
+
+.navbar-brand
+{
+  font-family: "Arial Black", sans-serif;
+}
+
+.navbar-logo
+{
+  width: 5%;
+  height: 5%;
+}
+
+.nav-item {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 10px;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 100%; height: 100%;
+    background: #efaf38;
+    transition: top 0.4s;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+    &::before {
+      top : 0%;
+    }
+  }
+}
+
+.nav-item-content {
+  margin: 10px;
+}
