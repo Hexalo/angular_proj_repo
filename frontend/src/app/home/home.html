@@ -3,7 +3,7 @@
   <button class="nav-btn" (click)="previous()">‹</button>
   <div class="list-movies">
     @for (movie of getVisibleMovies((movies$ | async) ?? []); track movie.id) {
-      <app-movie-card [movie]="movie"></app-movie-card>
+      <app-movie-card-trendy [movie]="movie"></app-movie-card-trendy>
     }
   </div>
   <button class="nav-btn" (click)="next()">›</button>
