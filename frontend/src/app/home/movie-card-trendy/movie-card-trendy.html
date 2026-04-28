@@ -1,0 +1,9 @@
+<div class="card shadow m-4" style="width: 18rem; min-height: 33rem">
+    @if(movie.image) {
+        <img [src]="'http://localhost:8080/movies/' + movie.id + '/image'" class="card-img-top" alt="">
+    }
+    <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <label class="note">⭐ {{movie.rate}} / 5</label>
+    </div>
+</div>
