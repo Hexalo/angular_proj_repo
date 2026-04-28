@@ -9,7 +9,7 @@ import { Movie } from '../models/movie';
 })
 export class MoviesApi {
   private readonly httpClient = inject(HttpClient);
-  private readonly url = "http://localhost:8081/movies"
+  private readonly url = "http://localhost:8080/movies"
 
   getMovies(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(this.url);
@@ -46,7 +46,7 @@ export class MoviesApi {
       text: text,
       reviewDate: new Date()
     };
-    return this.httpClient.post("http://localhost:8081/reviews", review);
+    return this.httpClient.post("http://localhost:8080/reviews", review);
   }
 
   updateReview(reviewId: number, movieId: number, rate: number, text: string): Observable<any> {
@@ -58,7 +58,7 @@ export class MoviesApi {
       text: text,
       reviewDate: new Date()
     };
-    return this.httpClient.put(`http://localhost:8081/reviews/${reviewId}`, review);
+    return this.httpClient.put(`http://localhost:8080/reviews/${reviewId}`, review);
   }
 
 }
