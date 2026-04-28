@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MoviesApi } from '../services/movies-api';
 import { Router } from '@angular/router';
 import { ToastService } from '../services/toast.service';
+import { tsParticles } from "@tsparticles/engine";
 
 @Component({
   selector: 'app-add-movie',
@@ -22,6 +23,8 @@ export class AddMovie {
         () => {
           this.toastService.show('Nouveau film ajouté !');
           this.router.navigate(['/movies']);
+          const particles = tsParticles.item(0)!;
+          particles.play();
         }
     );
   }
