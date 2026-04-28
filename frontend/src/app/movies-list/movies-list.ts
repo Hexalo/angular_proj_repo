@@ -32,7 +32,7 @@ export class MoviesList {
 
     this.moviesApi.deleteMovie(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
       this.dsService.show('Le système nous a eu');
-      this.toastService.show("Film supprimé !", "success");
+      this.toastService.show("Film supprimé !");
       this.movies = this.movies.filter(film => film.id !== id)
     });
   }
